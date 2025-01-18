@@ -92,4 +92,20 @@ const characters = [
   "/",
 ];
 
-function generatePasswords() {}
+let passwordText1 = document.getElementById("password-text1");
+let passwordText2 = document.getElementById("password-text2");
+function randomCharacter() {
+  return characters[Math.floor(Math.random() * characters.length)];
+}
+
+// password length 15 symbols
+function generatePasswords() {
+  let password1 = "";
+  let password2 = "";
+  for (let i = 0; i < 16; i++) {
+    password1 += randomCharacter();
+    password2 += randomCharacter();
+  }
+  passwordText1.textContent = password1;
+  passwordText2.textContent = password2;
+}
